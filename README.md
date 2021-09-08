@@ -40,24 +40,26 @@ Linux STDIN STDOUT STDERR
 # Linux SHELL: how commands are being executed
 As the shell input is being read, the command is devided into words and operators:
 ```
-                           xxxxxxxxxxxxxxxxxx
-                           x Ignore coments x
-                           xxxxxxxxxxxxxxxxxx
-                                   |
-                                   v
-        xxxxxxxxxxxxxx      xxxxxxxxxxxxxxxx          xxxxxxxxxxxxxxxxx
-        x Read input x ---> x Divide input x -------> x Apply quoting x
-        xxxxxxxxxxxxxx      xxxxxxxxxxxxxxxx          xxxxxxxxxxxxxxxxx
-                                                              |
-                                                              v
-                                                      xxxxxxxxxxxxxxxxxxxxxxx
-                                                      x Parse into commands x
-                                                      xxxxxxxxxxxxxxxxxxxxxxx
-                                                              |
-                                                              v
-    xxxxxxxxxxxxxxxxxx      xxxxxxxxxxxxxxxxxxxxx     xxxxxxxxxxxxxxxxxxxxx
-    x Display output x <--- x Wait exist status x <-- x Apply redirection x
-    xxxxxxxxxxxxxxxxxx      xxxxxxxxxxxxxxxxxxxxx     xxxxxxxxxxxxxxxxxxxxx
+    xxxxxxxxxxxxxxxxxxxxxx     xxxxxxxxxxxxxxxxxx
+    x                    x     x Ignore coments x
+    x      TERMINAL      x     xxxxxxxxxxxxxxxxxx
+    x                    x             |
+    x                    x             v
+    x   xxxxxxxxxxxxxx   x      xxxxxxxxxxxxxxxx          xxxxxxxxxxxxxxxxx
+    x   x Read input x   x ---> x Divide input x -------> x Apply quoting x
+    x   xxxxxxxxxxxxxx   x      xxxxxxxxxxxxxxxx          xxxxxxxxxxxxxxxxx
+    x                    x                                        |
+    x                    x                                        v
+    x                    x                                xxxxxxxxxxxxxxxxxxxxxxx
+    x                    x                                x Parse into commands x
+    x                    x                                xxxxxxxxxxxxxxxxxxxxxxx
+    x                    x                                        |
+    x                    x                                        v
+    x xxxxxxxxxxxxxxxxxx x      xxxxxxxxxxxxxxxxxxxxx     xxxxxxxxxxxxxxxxxxxxx
+    x x Display output x x <--- x Wait exist status x <-- x Apply redirection x
+    x xxxxxxxxxxxxxxxxxx x      xxxxxxxxxxxxxxxxxxxxx     xxxxxxxxxxxxxxxxxxxxx
+    x                    x
+    xxxxxxxxxxxxxxxxxxxxxx
 ```
 
 
