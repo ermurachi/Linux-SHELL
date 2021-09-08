@@ -37,6 +37,28 @@ Linux STDIN STDOUT STDERR
 
 ```
 
+# Linux SHELL: how commands are being executed
+As the shell input is being read, the command is devided into words and operators:
+```
+                           xxxxxxxxxxxxxxxxxx
+                           x Ignore coments x
+                           xxxxxxxxxxxxxxxxxx
+                                   |
+                                   v
+        xxxxxxxxxxxxxx      xxxxxxxxxxxxxxxx          xxxxxxxxxxxxxxxxx
+        x Read input x ---> x Divide input x -------> x Apply quoting x
+        xxxxxxxxxxxxxx      xxxxxxxxxxxxxxxx          xxxxxxxxxxxxxxxxx
+                                                              |
+                                                              v
+                                                      xxxxxxxxxxxxxxxxxxxxxxx
+                                                      x Parse into commands x
+                                                      xxxxxxxxxxxxxxxxxxxxxxx
+                                                              |
+                                                              v
+    xxxxxxxxxxxxxxxxxx      xxxxxxxxxxxxxxxxxxxxx     xxxxxxxxxxxxxxxxxxxxx
+    x Display output x <--- x Wait exist status x <-- x Apply redirection x
+    xxxxxxxxxxxxxxxxxx      xxxxxxxxxxxxxxxxxxxxx     xxxxxxxxxxxxxxxxxxxxx
+```
 
 
 
