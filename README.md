@@ -1,5 +1,5 @@
-# Linux SHELL: input-output-error
-Linux STDIN STDOUT STDERR
+# Linux SHELL: how commands are interpreted
+
 
 
 ```
